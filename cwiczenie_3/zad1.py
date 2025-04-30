@@ -1,5 +1,5 @@
 class CSP:
-    def __init__(self, variables, Domains,constraints):
+    def __init__(self, variables, Domains, constraints):
         self.variables = variables
         self.domains = Domains
         self.constraints = constraints
@@ -43,14 +43,14 @@ Domains = {"X1": {'R', 'B', 'G'}, "X2": {'R'}, "X3": {'G'}}
 
 constraints = {}
 constraints["X1"] = []
-constraints["X1"].append(("X1", "X2", lambda x,y: x != y))
-constraints["X1"].append(("X1", "X3", lambda x,y: x != y))
+constraints["X1"].append(("X1", "X2", lambda x, y: x != y))
+constraints["X1"].append(("X1", "X3", lambda x, y: x != y))
 constraints["X2"] = []
-constraints["X2"].append(("X2", "X1", lambda x,y: x != y))
-constraints["X2"].append(("X2", "X3", lambda x,y: x != y))
+constraints["X2"].append(("X2", "X1", lambda x, y: x != y))
+constraints["X2"].append(("X2", "X3", lambda x, y: x != y))
 constraints["X3"] = []
-constraints["X3"].append(("X3", "X2", lambda x,y: x != y))
-constraints["X3"].append(("X3", "X1", lambda x,y: x != y))
+constraints["X3"].append(("X3", "X2", lambda x, y: x != y))
+constraints["X3"].append(("X3", "X1", lambda x, y: x != y))
 
 csp = CSP(variables, Domains, constraints)
 sol = csp.solve()
